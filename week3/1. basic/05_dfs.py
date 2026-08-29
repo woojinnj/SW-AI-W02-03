@@ -71,7 +71,6 @@ if __name__ == "__main__":
     print("=== DFS (깊이 우선 탐색) ===")
     print(f"시작 정점: 0")
     
-
     result = dfs(graph, 0)
     print(f"방문 순서: {result}")
 
