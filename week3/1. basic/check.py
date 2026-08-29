@@ -24,7 +24,7 @@ def discover_problem_files():
     """현재 폴더의 'NN_*.py' 형식 문제 파일을 번호 순서대로 반환"""
     pattern = re.compile(r"^(\d{2})_.+\.py$")
     files = []
-    for entry in SCRIPT_DIR.iterdir():
+    for entry in SCRIPT_DIR.iterdir():  
         if entry.is_file() and entry.name != "check.py":
             m = pattern.match(entry.name)
             if m:
