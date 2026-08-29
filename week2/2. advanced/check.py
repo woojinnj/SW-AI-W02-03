@@ -10,12 +10,11 @@
   python check.py                      # (인자 없음) --all 과 동일하게 전체 채점
 """
 
-import sys
-import subprocess
 import os
 import re
+import subprocess
+import sys
 from pathlib import Path
-
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
