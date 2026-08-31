@@ -75,8 +75,8 @@ def n_queens(n: int) -> int:
         nonlocal count
 
         # 모든 행에 놓았다면?
-        if ???:
-            ???
+        if row==n:
+            count+=1
             return
 
         # 현재 행의 모든 열을 시도
@@ -85,13 +85,13 @@ def n_queens(n: int) -> int:
 
             # 이전 행의 퀸들과 충돌 검사
             for i in range(row):
-                if ???:
+                if cols[i]==c or abs(cols[i]-c)==row-i:
                     possible = False
                     break
 
             if possible:
                 cols[row] = c
-                place(???)
+                place(row+1)
 
         place(0)
         return count
