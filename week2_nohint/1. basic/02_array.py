@@ -37,8 +37,14 @@ def rotate_matrix_90(matrix):
     Returns:
         회전된 2차원 리스트
     """
-    pass
-
+    # 0 1
+    # 1 2
+    n=len(matrix)
+    arr=[[0]*n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            arr[j][n-i-1]=matrix[i][j]
+    return arr
 def print_matrix(matrix):
     """배열을 보기 좋게 출력하는 헬퍼 함수"""
     for row in matrix:
