@@ -30,7 +30,10 @@ def gcd(a, b):
     Returns:
         최대공약수
     """
-    pass
+    if a%b==0:
+        return b
+    return gcd(b,a%b)
+    
 
 def gcd_iterative(a, b):
     """
@@ -41,9 +44,11 @@ def gcd_iterative(a, b):
     
     Returns:
         최대공약수
-    """
-    pass
-
+    """ 
+    while b!=0:
+        a,b=b,a%b
+    
+    return a
 def lcm(a, b):
     """
     최소공배수 계산
@@ -54,7 +59,7 @@ def lcm(a, b):
     Returns:
         최소공배수
     """
-    pass
+    return (a*b)//gcd(a,b)
 
 def extended_gcd(a, b):
     """
@@ -67,7 +72,15 @@ def extended_gcd(a, b):
     Returns:
         (gcd, x, y) 튜플
     """
-    pass
+    if b==0:
+        return a,1,0
+    gcd_value,x1,y1=extended_gcd(b,a%b)
+
+    x=y1
+    y=x1-(a//b)*y1
+
+    return gcd_value,x,y
+
 
 def is_prime(n):
     """
@@ -79,7 +92,15 @@ def is_prime(n):
     Returns:
         소수이면 True, 아니면 False
     """
-    pass
+    a=n**0.5
+    if n==1:
+        return False
+    for i in range(2,int(a)+1):
+        if n%i==0:
+            return False
+    return True
+            
+
 if __name__ == '__main__':
     print('=== 테스트 케이스 1: GCD와 LCM ===')
     a, b = (48, 18)

@@ -30,7 +30,8 @@ def find_max_divide_conquer(arr, left, right):
     Returns:
         최댓값
     """
-    pass
+    
+    
 if __name__ == '__main__':
     arr1 = [3, 5, 1, 8, 2, 9, 4]
     result1 = find_max_divide_conquer(arr1, 0, len(arr1) - 1)
