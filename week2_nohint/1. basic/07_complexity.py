@@ -17,22 +17,22 @@
 출력: [2, 3]
 """
 
+
 def find_duplicates_brute_force(nums):
     """
     방법1: 이중 반복문 사용
     시간 복잡도: O(n²)
     공간 복잡도: O(k) - k는 중복 원소 개수
     """
-    n=len(nums)
-    arr=[]
+    n = len(nums)
+    arr = []
     for i in range(n):
         for j in range(n):
-            if i==j:
+            if i == j:
                 continue
-            if nums[i]==nums[j] and nums[i] not in arr:
+            if nums[i] == nums[j] and nums[i] not in arr:
                 arr.append(nums[i])
     return arr
-            
 
 
 def find_duplicates_sorting(nums):
@@ -42,12 +42,15 @@ def find_duplicates_sorting(nums):
     공간 복잡도: O(1) - 정렬을 in-place로 수행
     """
     nums.sort()
-    n=len(nums)
-    arr=[]
-    for i in range(1,n-1):
-        if (nums[i]==nums[i-1] or nums[i]==nums[i+1]) and (nums[i] not in arr):
+    n = len(nums)
+    arr = []
+
+
+    for i in range(n - 1):
+        if nums[i] == nums[i + 1] and nums[i] not in arr:
             arr.append(nums[i])
     return arr
+
 
 def find_duplicates_hash(nums):
     """
@@ -55,47 +58,51 @@ def find_duplicates_hash(nums):
     시간 복잡도: O(n)
     공간 복잡도: O(n)
     """
-    arr=set()
-    result=[]
+    arr = set()
+    result = set()
     for i in nums:
         if i in arr:
-            result.append(i)
+            result.add(i)
         else:
             arr.add(i)
     return result
 
+
 def measure_time(func, nums, method_name):
     """실행 시간 측정 헬퍼 함수"""
     result = func(nums[:])
-    print(f'{method_name}: {sorted(result)}')
+    print(f"{method_name}: {sorted(result)}")
     print()
-if __name__ == '__main__':
-    print('=== 테스트 케이스 1: 작은 배열 ===')
+
+
+if __name__ == "__main__":
+    print("=== 테스트 케이스 1: 작은 배열 ===")
     nums1 = [4, 3, 2, 7, 8, 2, 3, 1]
-    print(f'입력: {nums1}\n')
+    print(f"입력: {nums1}\n")
     result1 = find_duplicates_brute_force(nums1)
-    print(f'방법1 (Brute Force): {sorted(result1)}')
+    print(f"방법1 (Brute Force): {sorted(result1)}")
     result2 = find_duplicates_sorting(nums1)
-    print(f'방법2 (Sorting): {sorted(result2)}')
+    print(f"방법2 (Sorting): {sorted(result2)}")
     result3 = find_duplicates_hash(nums1)
-    print(f'방법3 (Hash): {sorted(result3)}')
+    print(f"방법3 (Hash): {sorted(result3)}")
     print()
-    print('=== 테스트 케이스 2: 성능 비교 (n=1000) ===')
+    print("=== 테스트 케이스 2: 성능 비교 (n=1000) ===")
     import random
+
     random.seed(42)
     nums2 = [random.randint(1, 500) for _ in range(1000)]
-    measure_time(find_duplicates_brute_force, nums2, '방법1 (O(n²))')
-    measure_time(find_duplicates_sorting, nums2, '방법2 (O(n log n))')
-    measure_time(find_duplicates_hash, nums2, '방법3 (O(n))')
-    print('=== 복잡도 분석 요약 ===')
-    print('방법1 - Brute Force:')
-    print('  시간: O(n²), 공간: O(k)')
-    print('  특징: 간단하지만 느림')
+    measure_time(find_duplicates_brute_force, nums2, "방법1 (O(n²))")
+    measure_time(find_duplicates_sorting, nums2, "방법2 (O(n log n))")
+    measure_time(find_duplicates_hash, nums2, "방법3 (O(n))")
+    print("=== 복잡도 분석 요약 ===")
+    print("방법1 - Brute Force:")
+    print("  시간: O(n²), 공간: O(k)")
+    print("  특징: 간단하지만 느림")
     print()
-    print('방법2 - Sorting:')
-    print('  시간: O(n log n), 공간: O(1)')
-    print('  특징: 추가 메모리 없이 효율적')
+    print("방법2 - Sorting:")
+    print("  시간: O(n log n), 공간: O(1)")
+    print("  특징: 추가 메모리 없이 효율적")
     print()
-    print('방법3 - Hash:')
-    print('  시간: O(n), 공간: O(n)')
-    print('  특징: 가장 빠르지만 메모리 사용')
+    print("방법3 - Hash:")
+    print("  시간: O(n), 공간: O(n)")
+    print("  특징: 가장 빠르지만 메모리 사용")

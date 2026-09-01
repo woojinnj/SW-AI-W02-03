@@ -27,7 +27,14 @@ def bubble_sort(arr):
     Returns:
         정렬된 배열
     """
-    pass
+    n=len(arr)
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if arr[i]>arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+
+    
 
 def bubble_sort_optimized(arr):
     """
@@ -39,7 +46,23 @@ def bubble_sort_optimized(arr):
     Returns:
         정렬된 배열
     """
-    pass
+    n= len(arr)
+    for i in range(n-1):
+        swapped=False
+        for j in range(i,n):
+            if arr[i]>arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+                swapped=True
+
+        if not swapped:
+            break
+                
+
+    return arr
+
+
+
+
 if __name__ == '__main__':
     arr1 = [64, 34, 25, 12, 22, 11, 90]
     print('=== 테스트 케이스 1 ===')
