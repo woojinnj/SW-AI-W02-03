@@ -23,7 +23,17 @@ def find_duplicates_brute_force(nums):
     시간 복잡도: O(n²)
     공간 복잡도: O(k) - k는 중복 원소 개수
     """
-    pass
+    n=len(nums)
+    arr=[]
+    for i in range(n):
+        for j in range(n):
+            if i==j:
+                continue
+            if nums[i]==nums[j] and nums[i] not in arr:
+                arr.append(nums[i])
+    return arr
+            
+
 
 def find_duplicates_sorting(nums):
     """
@@ -31,7 +41,13 @@ def find_duplicates_sorting(nums):
     시간 복잡도: O(n log n) - 정렬
     공간 복잡도: O(1) - 정렬을 in-place로 수행
     """
-    pass
+    nums.sort()
+    n=len(nums)
+    arr=[]
+    for i in range(1,n-1):
+        if (nums[i]==nums[i-1] or nums[i]==nums[i+1]) and (nums[i] not in arr):
+            arr.append(nums[i])
+    return arr
 
 def find_duplicates_hash(nums):
     """
@@ -39,7 +55,14 @@ def find_duplicates_hash(nums):
     시간 복잡도: O(n)
     공간 복잡도: O(n)
     """
-    pass
+    arr=set()
+    result=[]
+    for i in nums:
+        if i in arr:
+            result.append(i)
+        else:
+            arr.add(i)
+    return result
 
 def measure_time(func, nums, method_name):
     """실행 시간 측정 헬퍼 함수"""
