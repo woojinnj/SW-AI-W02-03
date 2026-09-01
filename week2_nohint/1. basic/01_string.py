@@ -30,7 +30,13 @@ def is_palindrome(s):
     Returns:
         bool: 회문이면 True, 아니면 False
     """
-    pass
+    arr=[]
+    s=s.lower()
+    for i in s:
+        if i.isalnum():
+          arr.append(i)
+    return arr[:] == arr[::-1]
+
 if __name__ == '__main__':
     test1 = 'A man, a plan, a canal: Panama'
     result1 = is_palindrome(test1)
