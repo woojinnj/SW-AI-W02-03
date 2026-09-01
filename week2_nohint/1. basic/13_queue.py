@@ -1,0 +1,43 @@
+"""
+[큐 - 프린터 대기열]
+
+문제 설명:
+- 큐(Queue)를 사용하여 프린터 작업을 순서대로 처리합니다.
+- FIFO (First In First Out) 구조를 활용합니다.
+
+입력:
+- jobs: 인쇄 작업 리스트 (예: ["문서A", "문서B", "문서C"])
+
+출력:
+- 작업이 처리되는 순서
+
+예제:
+입력: ["문서A", "문서B", "문서C"]
+출력:
+처리: 문서A
+처리: 문서B
+처리: 문서C
+"""
+from collections import deque
+
+def process_print_queue(jobs):
+    """
+    프린터 작업을 순서대로 처리
+    
+    Args:
+        jobs: 작업 리스트
+    
+    Returns:
+        처리된 작업 리스트
+    """
+    pass
+if __name__ == '__main__':
+    jobs1 = ['문서A', '문서B', '문서C']
+    print('=== 프린터 작업 처리 ===')
+    result1 = process_print_queue(jobs1)
+    print(f'처리 완료: {result1}')
+    print()
+    jobs2 = ['이메일', '보고서', '사진', '계약서']
+    print('=== 프린터 작업 처리 ===')
+    result2 = process_print_queue(jobs2)
+    print(f'처리 완료: {result2}')

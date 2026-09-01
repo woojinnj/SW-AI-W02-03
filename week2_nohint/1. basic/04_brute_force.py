@@ -20,10 +20,6 @@
       nums[0] + nums[4] = 2 + 7 = 9 (중복이지만 인덱스가 다름)
 
 실제로는: nums[0] + nums[1] = 2 + 7 = 9만 해당
-
-힌트:
-- 이중 반복문을 사용하여 모든 쌍을 확인하세요
-- i < j 조건을 유지하여 중복을 방지하세요
 """
 
 def find_two_sum_pairs(nums, target):
@@ -37,42 +33,25 @@ def find_two_sum_pairs(nums, target):
     Returns:
         list: (i, j) 인덱스 쌍의 리스트
     """
-    pairs = []
-    n = len(nums)
-    
-    for i in range(n - 1):
-        first = nums[i]
-        for j in range(i + 1, n):
-            if first + nums[j] == target:
-                pairs.append((i, j))
-
-    return pairs
-
-# 테스트 케이스
-if __name__ == "__main__":
-    # 테스트 케이스 1
+    pass
+if __name__ == '__main__':
     nums1 = [2, 7, 11, 15]
     target1 = 9
     result1 = find_two_sum_pairs(nums1, target1)
-    print(f"배열: {nums1}")
-    print(f"목표 합: {target1}")
-    print(f"결과 쌍: {result1}")
+    print(f'배열: {nums1}')
+    print(f'목표 합: {target1}')
+    print(f'결과 쌍: {result1}')
     print()
-    
-    # 테스트 케이스 2
     nums2 = [1, 3, 4, 2, 5, 6]
     target2 = 7
     result2 = find_two_sum_pairs(nums2, target2)
-    print(f"배열: {nums2}")
-    print(f"목표 합: {target2}")
-    print(f"결과 쌍: {result2}")
+    print(f'배열: {nums2}')
+    print(f'목표 합: {target2}')
+    print(f'결과 쌍: {result2}')
     print()
-    
-    # 테스트 케이스 3
     nums3 = [1, 1, 1, 1]
     target3 = 2
     result3 = find_two_sum_pairs(nums3, target3)
-    print(f"배열: {nums3}")
-    print(f"목표 합: {target3}")
-    print(f"결과 쌍: {result3}")
-
+    print(f'배열: {nums3}')
+    print(f'목표 합: {target3}')
+    print(f'결과 쌍: {result3}')
