@@ -33,7 +33,14 @@ def find_two_sum_pairs(nums, target):
     Returns:
         list: (i, j) 인덱스 쌍의 리스트
     """
-    pass
+    n=len(nums)
+    result=[]
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if nums[i]+nums[j]==target:
+                result.append((i,j))
+    return result
+    
 if __name__ == '__main__':
     nums1 = [2, 7, 11, 15]
     target1 = 9
