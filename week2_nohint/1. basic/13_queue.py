@@ -30,7 +30,15 @@ def process_print_queue(jobs):
     Returns:
         처리된 작업 리스트
     """
-    pass
+    # print(jobs)
+    arr=deque()
+    result=[]
+    for i in jobs:
+        arr.append(i)
+    while arr:
+        result.append(arr.popleft())
+    return result
+
 if __name__ == '__main__':
     jobs1 = ['문서A', '문서B', '문서C']
     print('=== 프린터 작업 처리 ===')

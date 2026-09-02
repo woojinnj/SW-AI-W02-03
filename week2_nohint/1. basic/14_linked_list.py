@@ -30,6 +30,8 @@ class LinkedList:
 
     def __init__(self):
         self.head = None
+        
+
 
     def append(self, data):
         """리스트 끝에 노드를 추가합니다."""

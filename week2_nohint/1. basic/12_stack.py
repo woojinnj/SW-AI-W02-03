@@ -30,7 +30,16 @@ def is_valid_parentheses(s):
     Returns:
         올바른 괄호면 True, 아니면 False
     """
-    pass
+    stack=[]
+    for i in s:
+        if i=='(':
+            stack.append('(')
+        if i==')' and not stack:
+            return False
+        if i==')' and stack:
+            stack.pop()
+    return not stack
+            
 if __name__ == '__main__':
     test1 = '(())'
     result1 = is_valid_parentheses(test1)
