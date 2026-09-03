@@ -49,7 +49,7 @@ def bfs(graph, start):
         current=queue.popleft()
         visited.append(current)
 
-        for n in graph(current):
+        for n in graph[current]:
             if n not in seen:
                 queue.append(n)
                 seen.add(n)
