@@ -18,9 +18,9 @@
 
 예제:
 트리:
-      5
-     /     3   7
-   /   2   4
+          5
+       3    7
+     2   4
 
 찾는 값: 4 → True
 찾는 값: 6 → False
@@ -44,7 +44,16 @@ def search_bst(root, target):
     Returns:
         True/False
     """
-    pass
+    if root is None:
+        return False
+
+    if target==root.value:
+        return True
+    elif target>root.value:
+        return search_bst(root.right,target)
+    elif target<root.value:
+        return search_bst(root.left,target)
+    
 if __name__ == '__main__':
     root = TreeNode(5)
     root.left = TreeNode(3)

@@ -36,7 +36,15 @@ def create_graph(vertices, edges, directed=False):
     Returns:
         그래프 딕셔너리
     """
-    pass
+    graph={}
+    for i in range(vertices):
+        graph[i]=[]
+
+    for u,v in edges:
+        graph[u].append(v)
+        if not directed:
+            graph[v].append(u)
+    return graph
 if __name__ == '__main__':
     vertices = 4
     edges = [(0, 1), (0, 2), (1, 2), (2, 3)]

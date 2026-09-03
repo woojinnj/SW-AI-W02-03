@@ -46,7 +46,7 @@ def create_graph(vertices, edges, directed=False):
     for i in range(vertices):
         graph[i]=[]
     # TODO: 간선 추가
-    ## 간선 추가 (u에서 v로)
+    ## 간선 추가 (u에서 v로) 
     ## 무방향 그래프면 반대 방향도 추가
     for u,v in edges:
         graph[u].append(v)
