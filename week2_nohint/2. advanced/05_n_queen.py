@@ -49,7 +49,12 @@ def n_queens(n: int) -> int:
     N x N 체스판에 N 개의 퀸을 서로 공격하지 않도록 배치하는 경우의 수를 반환.
     1 <= N <= 8 범위에서 동작하면 충분합니다.
     """
-    pass
+    cols=[-1]*n
+    count=0
+
+    def place(n,col):
+        nonlocal count
+
 if __name__ == '__main__':
     print('[테스트] N=1 ~ N=8 에 대한 가능한 배치의 수')
     for n in range(1, 9):
