@@ -37,7 +37,25 @@ def bfs(graph, start):
     Returns:
         방문 순서 리스트
     """
-    pass
+    queue=deque()
+    queue.append(start)
+
+    seen=set()
+    seen.add(start)
+    
+    visited=[] # 방문 순서 기록
+
+    while queue:
+        current=queue.popleft()
+        visited.append(current)
+
+        for n in graph(current):
+            if n not in seen:
+                queue.append(n)
+                seen.add(n)
+
+    return visited
+
 if __name__ == '__main__':
     graph = {0: [1, 2], 1: [0, 2], 2: [0, 1, 3], 3: [2]}
     print('=== BFS (너비 우선 탐색) ===')
