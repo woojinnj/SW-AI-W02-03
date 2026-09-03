@@ -17,8 +17,8 @@
 
 예제:
 트리 구조:
-      1
-     /     2   3
+           1
+     /   2   3
    /   4   5
 
 전위: [1, 2, 4, 5, 3]
@@ -36,15 +36,39 @@ class TreeNode:
 
 def preorder(root):
     """전위 순회: 루트 → 왼쪽 → 오른쪽"""
-    pass
+    result=[]
+    if not root:
+        return []
 
+    result.append(root.value)
+    result.extend(preorder(root.left))
+    result.extend(preorder(root.right))
+
+    return result
+    
 def inorder(root):
     """중위 순회: 왼쪽 → 루트 → 오른쪽"""
-    pass
+    result=[]
+    if not root:
+        return []
+
+    result.extend(inorder(root.left))
+    result.append(root.value)
+    result.extend(inorder(root.right))
+
+    return result
 
 def postorder(root):
     """후위 순회: 왼쪽 → 오른쪽 → 루트"""
-    pass
+    result=[]
+    if not root:
+        return []
+    result.extend(postorder(root.left))
+    result.extend(postorder(root.right))
+    result.append(root.value)
+
+    return result
+
 if __name__ == '__main__':
     root = TreeNode(1)
     root.left = TreeNode(2)
