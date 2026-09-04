@@ -47,7 +47,7 @@ def select_meetings(meetings):
     selected.append(meetings[0])
     # print(selected)
     
-    # TODO: 나머지 회의들 확인
+    # TODO: 나머지 회의들 확인 
     ## 이전 회의가 끝난 후 시작하는 회의만 선택
     for i in meetings[1:]:
         if i[0]>=selected[-1][1]:

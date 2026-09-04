@@ -28,7 +28,19 @@ def select_meetings(meetings):
     Returns:
         (배정된 회의 개수, 선택된 회의 리스트)
     """
-    pass
+    if not meetings: return 0
+
+    meetings.sort(key=lambda x:x[1])
+    selected=[]
+    selected.append(meetings[0])
+
+    for i in meetings[1:]:
+        if i[0]>=selected[-1][1]:
+            selected.append(i)
+    return len(selected),selected
+
+
+    
 if __name__ == '__main__':
     meetings1 = [(1, 4), (3, 5), (0, 6), (5, 7), (3, 8), (5, 9)]
     count1, selected1 = select_meetings(meetings1)
