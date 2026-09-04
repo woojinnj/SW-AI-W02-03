@@ -46,7 +46,6 @@ def dfs(graph, start, visited=None):
     if visited is None:
         visited=[]
     
-    # TODO: 현재 정점 방문
     if start not in visited:
         visited.append(start)
 
@@ -73,4 +72,3 @@ if __name__ == "__main__":
     
     result = dfs(graph, 0)
     print(f"방문 순서: {result}")
-

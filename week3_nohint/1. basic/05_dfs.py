@@ -37,7 +37,15 @@ def dfs(graph, start, visited=None):
     Returns:
         방문 순서 리스트
     """
-    pass
+    if visited is None:
+        visited=[]
+
+    if start not in visited:
+        visited.append(start)
+
+        for i in graph[start]:
+            dfs(graph,i,visited)
+    return visited
 if __name__ == '__main__':
     graph = {0: [1, 2], 1: [0, 2], 2: [0, 1, 3], 3: [2]}
     print('=== DFS (깊이 우선 탐색) ===')
