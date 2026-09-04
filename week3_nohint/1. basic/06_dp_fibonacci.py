@@ -29,7 +29,6 @@ def fibonacci_memo(n, memo=None):
     """
     if memo is None:
         memo=[-1]*(n+2)
-
     memo[0]=0
     memo[1]=1
 

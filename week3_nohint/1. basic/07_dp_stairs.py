@@ -33,7 +33,15 @@ def climb_stairs(n):
     Returns:
         n번째 계단까지 오르는 방법의 수
     """
-    pass
+    memo=[-1]*(n+1)
+    if n<=2:
+        return n
+    memo[1]=1
+    memo[2]=2
+
+    for i in range(3,n+1):
+        memo[i]=memo[i-1]+memo[i-2]
+    return memo[n]
 if __name__ == '__main__':
     print('=== 계단 오르기 ===')
     for i in range(1, 11):
