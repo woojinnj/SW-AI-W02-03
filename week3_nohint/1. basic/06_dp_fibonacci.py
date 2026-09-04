@@ -27,7 +27,20 @@ def fibonacci_memo(n, memo=None):
     Returns:
         n번째 피보나치 수
     """
-    pass
+    if memo is None:
+        memo=[-1]*(n+2)
+
+    memo[0]=0
+    memo[1]=1
+
+    def dfs(k):
+        if memo[k]!=-1:
+            return memo[k]
+        else:
+            memo[k]=dfs(k-1)+dfs(k-2)
+            return memo[k]
+    return dfs(n)
+
 if __name__ == '__main__':
     print('=== 피보나치 수열 (메모이제이션) ===')
     for i in range(11):
