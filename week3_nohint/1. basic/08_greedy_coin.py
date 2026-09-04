@@ -35,7 +35,14 @@ def make_change_greedy(change, coins):
     Returns:
         (총 개수, {동전: 개수} 딕셔너리)
     """
-    pass
+    result={}
+    total=0
+    for i in coins:
+        if change//i>0:
+            result[i]=change//i
+        total+=change//i
+        change%=i
+    return total,result
 if __name__ == '__main__':
     change1 = 1260
     coins1 = [500, 100, 50, 10]
