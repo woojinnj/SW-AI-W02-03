@@ -39,7 +39,6 @@ def dfs(graph, start, visited=None):
     """
     if visited is None:
         visited=[]
-
     if start not in visited:
         visited.append(start)
 
